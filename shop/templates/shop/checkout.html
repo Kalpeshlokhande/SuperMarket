@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h2>Checkout</h2>
+<form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="address" class="form-label">Delivery Address</label>
+    <textarea name="address" id="address" class="form-control" required>{{ profile.address }}</textarea>
+  </div>
+  <p><strong>Payment:</strong> Cash on Delivery only</p>
+  <button type="submit" class="btn btn-primary">Place Order</button>
+</form>
+{% endblock %}
